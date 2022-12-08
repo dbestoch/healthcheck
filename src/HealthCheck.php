@@ -148,8 +148,8 @@ class HealthCheck
     {
 
         try {
-            $redisConnection  = Redis::connection('default')->ping();
-            if($redisConnection == 1) {
+            $redisConnection = Redis::connection('default')->ping();
+            if($redisConnection === 1 || $redisConnection == "PONG") {
                 $this->setServiceStatus('Redis', 'up');
             } else {
                 $this->setStatusCode(503);
