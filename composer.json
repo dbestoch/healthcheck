@@ -9,7 +9,7 @@
             "homepage": "https://choosebooster.com"
         }
     ],
-    "homepage": "https://github.com/Boosterthon/healthcheck",
+    "homepage": "https://gitlab.com/boosterthon/php-laravel/boosterops/healthcheck",
     "keywords": ["Laravel", "HealthCheck"],
     "require-dev": {
         "phpunit/phpunit": "~9.0",
