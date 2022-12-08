@@ -1,0 +1,39 @@
+{
+    "name": "boosterops/healthcheck",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Parker",
+            "email": "mattparker@choosebooster.com",
+            "homepage": "https://choosebooster.com"
+        }
+    ],
+    "homepage": "https://github.com/Boosterthon/healthcheck",
+    "keywords": ["Laravel", "HealthCheck"],
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "BoosterOps\\HealthCheck\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BoosterOps\\HealthCheck\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BoosterOps\\HealthCheck\\HealthCheckServiceProvider"
+            ],
+            "aliases": {
+                "HealthCheck": "BoosterOps\\HealthCheck\\Facades\\HealthCheck"
+            }
+        }
+    },
+    "minimum-stability": "stable"
+}
