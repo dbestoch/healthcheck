@@ -14,7 +14,6 @@ use Exception;
 class HealthCheck
 {
 
-    private $responseData        = [];
     private $statusPerService    = [];
     private $systemMetaData      = [];
     private $http_status_code    = 200;
