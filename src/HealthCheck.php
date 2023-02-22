@@ -207,14 +207,14 @@ class HealthCheck
     protected function storageCheck(): void
     {
 
-        $limitPercentage = 85;
-        $spaceUsed       = number_format((disk_free_space('/') / disk_total_space('/')) * 100, 1);
+        $limitPercentage = 20;
+        $spaceAvailable  = number_format((disk_free_space('/') / disk_total_space('/')) * 100, 1);
 
-        if($spaceUsed >= $limitPercentage){
+        if($spaceAvailable <= $limitPercentage){
             $this->setStatusMessage('warning');
-            $this->setSystemMetaFact('storage', $spaceUsed, 'warning, the filesytem is more than 85% full');
+            $this->setSystemMetaFact('storage', $spaceAvailable, 'warning, the filesytem is more than 80% full');
         } else {
-            $this->setSystemMetaFact('storage', 'ok', $spaceUsed . '% used');
+            $this->setSystemMetaFact('storage', 'ok', $spaceAvailable . '% storage available');
         }
 
     }
